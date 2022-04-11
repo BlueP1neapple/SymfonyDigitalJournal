@@ -211,8 +211,8 @@ class JournalAdministrationController extends AbstractController
             $this->em->beginTransaction();
             $this->newReportService->registerAssessmentReport(
                 new NewAssessmentReportDto(
-                    $dataToCreate['lesson_id'][0]->getId(),
-                    $dataToCreate['student_id'][0]->getId(),
+                    $dataToCreate['lesson_id']->getId(),
+                    $dataToCreate['student_id']->getId(),
                     $dataToCreate['mark']
                 )
             );
@@ -235,11 +235,11 @@ class JournalAdministrationController extends AbstractController
             $this->em->beginTransaction();
             $this->newLessonService->registerLesson(
                 new NewLessonDto(
-                    $dataToCreate['item_id'][0]->getId(),
+                    $dataToCreate['item_id']->getId(),
                     $dataToCreate['date']->format('Y.m.d G:i'),
                     $dataToCreate['lesson_duration'],
-                    $dataToCreate['teacher_id'][0]->getId(),
-                    $dataToCreate['class_id'][0]->getId(),
+                    $dataToCreate['teacher_id']->getId(),
+                    $dataToCreate['class_id']->getId(),
                 )
             );
             $this->em->flush();
@@ -273,18 +273,5 @@ class JournalAdministrationController extends AbstractController
         }
     }
 
-    /**
-     * Создаёт дату и время в нужном формате
-     *
-     * @param array $dataToCreate
-     * @return string
-     */
-    private function createDate(array $dataToCreate): string
-    {
-        $date = $dataToCreate['date'];
-        $time = $dataToCreate['time'];
-
-        return date("Y.m.d", strtotime($date)) . " " . $time;
-    }
 
 }
