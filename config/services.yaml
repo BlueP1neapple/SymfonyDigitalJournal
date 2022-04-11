@@ -13,12 +13,60 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    App\:
+    JoJoBizzareCoders\DigitalJournal\:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    JoJoBizzareCoders\DigitalJournal\Entity\AbstractUserRepositoryInterface:
+      factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+      arguments:
+          $entityName: JoJoBizzareCoders\DigitalJournal\Entity\AbstractUserClass
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    JoJoBizzareCoders\DigitalJournal\Entity\LessonRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\LessonClass
+
+    JoJoBizzareCoders\DigitalJournal\Entity\ParentRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\AbstractUserClass
+
+    JoJoBizzareCoders\DigitalJournal\Entity\ClassRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\ClassClass
+
+    JoJoBizzareCoders\DigitalJournal\Entity\ItemRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\ItemClass
+
+    JoJoBizzareCoders\DigitalJournal\Entity\TeacherRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\AbstractUserClass
+
+    JoJoBizzareCoders\DigitalJournal\Entity\StudentRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\AbstractUserClass
+
+    JoJoBizzareCoders\DigitalJournal\Entity\AssessmentReportRepositoryInterface:
+        factory: [ '@Doctrine\ORM\EntityManagerInterface', 'getRepository' ]
+        arguments:
+            $entityName: JoJoBizzareCoders\DigitalJournal\Entity\ReportClass
+
+
+
+    JoJoBizzareCoders\DigitalJournal\DoctrineEventSubscriber\EntityEventSubscriber:
+        tags:
+            - name: 'doctrine.event_subscriber'
+
+    #  Monolog\Handler\TelegramBotHandler:
+    #    arguments:
+    #      $apiKey: '%env(TELEGRAMM_BOT_KEY)%'
+    #      $channel: '%env(TELEGRAMM_CHANAL)%'
+    #      $level: 'error'

@@ -1,7 +1,28 @@
-controllers:
-    resource: ../src/Controller/
-    type: annotation
-
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+login:
+    path: /login
+    controller: JoJoBizzareCoders\DigitalJournal\Controller\LoginController::__invoke
+    methods: [POST, GET]
+journal_administration_controller:
+    path: /journalAdministrationController
+    controller: JoJoBizzareCoders\DigitalJournal\Controller\JournalAdministrationController::__invoke
+    methods: [POST, GET]
+assessment_report:
+    path: /assessmentReport
+    controller: JoJoBizzareCoders\DigitalJournal\Controller\GetAssessmentReportCollectionController::__invoke
+    methods: [ GET ]
+lesson:
+    path: /lesson
+    controller: JoJoBizzareCoders\DigitalJournal\Controller\GetLessonCollectionController::__invoke
+    methods: [ GET ]
+assessment_report_id:
+    path: /assessmentReport/{id}
+    controller: JoJoBizzareCoders\DigitalJournal\Controller\GetAssessmentReportController::__invoke
+    methods: [ GET ]
+    requirements:
+        id: '\d+'
+lesson_id:
+    path: /lesson/{id}
+    controller: JoJoBizzareCoders\DigitalJournal\Controller\GetLessonController::__invoke
+    methods: [ GET ]
+    requirements:
+        id: '\d+'

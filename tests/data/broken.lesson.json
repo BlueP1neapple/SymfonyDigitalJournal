@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "item_id": 1,
+    "lessonDuration": 40,
+    "teacher_id": 1,
+    "class_id": 3
+  }
+]

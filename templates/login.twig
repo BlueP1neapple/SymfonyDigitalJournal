@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+</head>
+<body>
+<h1>Аутентификация</h1>
+
+
+<div class="col-3">
+    {{ form(form_login) }}
+</div>
+{% if errs %}
+    <div>
+        {{ errs.messageKey|trans(errs.messageData, 'security') }}
+    </div>
+{% endif %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,81 @@
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body class="bg-dark text-dark">
+    <h1 class="text-white-50">Journal Page</h1>
+
+<div class="col-3 dropdown-menu-dark dark" >
+        <h3>Добавить урок</h3>
+    {{ form(form_new_lesson) }}
+
+</div>
+
+<div>
+    <h1>Уроки</h1>
+</div>
+<table class="table table-bordered table-striped table-hover table-dark">
+    <thead>
+    <tr>
+        <th>Предмет</th>
+        <th>Преподаватель</th>
+        <th>Класс</th>
+        <th>Дата занятия</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {% for lesson in lessons %}
+            <td> {{ lesson.getItem.getName }} </td>
+            <td> {{ lesson.getTeacher.fio.surname }}</td>
+            <td> {{ lesson.getClass.getLetter }} {{ lesson.getClass.getNumber }}</td>
+            <td> {{ lesson.getDate }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="col-3 dropdown-menu-dark dark">
+    <h3>Добавить оценку</h3>
+    {{ form(form_new_assessment_report) }}
+
+</div>
+<div>
+    <h1>Оценки</h1>
+</div>
+<table class="table table-bordered table-striped table-hover table-dark">
+    <thead>
+    <tr>
+        <th>Название предмета</th>
+        <th>Дата проведения урока</th>
+        <th>Фамилия ученика</th>
+        <th>Оценка</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {% for report in reports %}
+        <td> {{ report.getLesson.getItem.getName }} </td>
+        <td> {{ report.getLesson.getDate }}</td>
+        <td> {{ report.getStudent.fio.surname }} </td>
+        <td> {{ report.getMark }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="col-3 dropdown-menu-dark dark">
+    <h3>Добавить предмет</h3>
+    {{ form(form_new_item) }}
+
+</div>
+</body>
+
+
+
+
+
+

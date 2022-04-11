@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "lesson":
+    {
+      "id": 1,
+      "item":
+      {
+        "id": 1,
+        "name": "Математика",
+        "description": "Математика"
+      },
+      "date": "2011.11.10 8:30",
+      "lessonDuration": 40,
+      "teacher":
+      {
+        "id": 1,
+        "fio": "Круглова Наталия Сергеевна",
+        "dateOfBirth": "1965.01.11",
+        "phone": "89222444411",
+        "address": "ул. Ясная, д. 54, кв. 19",
+        "idItem": 1,
+        "cabinet": 56,
+        "email": "kruglova@gmail.com"
+      },
+      "class":
+      {
+        "id": 3,
+        "number": 6,
+        "letter": "А"
+      }
+    },
+    "student":
+    {
+      "id": 1,
+      "fio": "Кузнецов Алексей Евгеньевич",
+      "dateOfBirth": "2011.01.11",
+      "phone": "+792224444.88",
+      "address": "ул. Казанская, д. 35Б, кв. 23",
+      "class_id": 1,
+      "parent":
+      {
+        "id": 1,
+        "fio": "Кузнецов Евгений Сергеевич",
+        "dateOfBirth": "1975.10.01",
+        "phone": "+79222444488",
+        "address": "ул. Казанская, д. 35Б, кв. 23",
+        "placeOfWork": "ООО Алмаз",
+        "email": "kuznecov@gmail.com"
+      }
+    },
+    "mark": 5
+  }
+]

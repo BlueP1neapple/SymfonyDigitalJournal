@@ -1,0 +1,114 @@
+[
+    {
+        "id": 4,
+        "fio": [
+            {
+                "surname": "Кузнецов",
+                "name": "Алексей",
+                "patronymic": "Евгеньевич"
+            }
+        ],
+        "dateOfBirth": "2011.01.11",
+        "phone": "+792224444.88",
+        "class_id": 1,
+        "parent_id": 12
+    },
+    {
+        "id": 2,
+        "fio": [
+            {
+                "surname": "Соколова",
+                "name": "Алла",
+                "patronymic": "Юрьевна"
+            }
+        ],
+        "dateOfBirth": "2011.01.12",
+        "phone": "+79222433488",
+        "class_id": 1,
+        "parent_id": 8
+    },
+    {
+        "id": 3,
+        "fio": [
+            {
+                "surname": "Смирнова",
+                "name": "Елена",
+                "patronymic": "Владимировна"
+            }
+        ],
+        "dateOfBirth": "2011.02.01",
+        "phone": "+79322444423",
+        "class_id": 1,
+        "parent_id": 4
+    },
+    {
+        "id": 4,
+        "fio": [
+            {
+                "surname": "Заимова",
+                "name": "Ксения",
+                "patronymic": "Владимировна"
+            }
+        ],
+        "dateOfBirth": "2012.02.23",
+        "phone": "+79234444488",
+        "class_id": 2,
+        "parent_id": 5
+    },
+    {
+        "id": 5,
+        "fio": [
+            {
+                "surname": "Кузнецова",
+                "name": "Анастасия",
+                "patronymic": "Сергеевна"
+            }
+        ],
+        "dateOfBirth": "2012.11.12",
+        "phone": "+79223333388",
+        "class_id": 2,
+        "parent_id": 6
+    },
+    {
+        "id": 6,
+        "fio": [
+            {
+                "surname": "Соломона",
+                "name": "Елена",
+                "patronymic": "Дмитриевна"
+            }
+        ],
+        "dateOfBirth": "2009.07.14",
+        "phone": "+79222222222",
+        "class_id": 3,
+        "parent_id": 7
+    },
+    {
+        "id": 7,
+        "fio": [
+            {
+                "surname": "Крабов",
+                "name": "Владимир",
+                "patronymic": "Юрьевич"
+            }
+        ],
+        "dateOfBirth": "2009.04.23",
+        "phone": "+79888444488",
+        "class_id": 3,
+        "parent_id": 2
+    },
+    {
+        "id": 8,
+        "fio": [
+            {
+                "surname": "Яснова",
+                "name": "Мария",
+                "patronymic": "Сергеевна"
+            }
+        ],
+        "dateOfBirth": "2009.11.03",
+        "phone": "+79222444656",
+        "class_id": 3,
+        "parent_id": 3
+    }
+]
