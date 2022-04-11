@@ -44,6 +44,13 @@
         private ?string $studentSurname = null;
 
         /**
+         * Id студента
+         *
+         * @var string|null
+         */
+        private ?string $studentId = null;
+
+        /**
          * Фамилия студента
          *
          * @var string|null
@@ -87,6 +94,23 @@
         {
             return $this->id;
         }
+
+        /**
+         * @return string|null
+         */
+        public function getStudentId(): ?string
+        {
+            return $this->studentId;
+        }
+
+        /**
+         * @param string|null $studentId
+         */
+        public function setStudentId(?string $studentId): void
+        {
+            $this->studentId = $studentId;
+        }
+
 
         /**
          * Устанавливает id оценки
