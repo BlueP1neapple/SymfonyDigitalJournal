@@ -2,7 +2,6 @@
 
 namespace JoJoBizzareCoders\DigitalJournal\Service;
 
-use JoJoBizzareCoders\DigitalJournal\Entity\AbstractUserRepositoryInterface;
 use JoJoBizzareCoders\DigitalJournal\Entity\ClassRepositoryInterface;
 use JoJoBizzareCoders\DigitalJournal\Entity\ItemRepositoryInterface;
 use JoJoBizzareCoders\DigitalJournal\Entity\LessonClass;
@@ -63,6 +62,12 @@ class NewLessonService
         $this->classRepository = $classRepository;
     }
 
+    /**
+     * Регистрация нового урока
+     *
+     * @param NewLessonDto $lessonDto
+     * @return ResultRegistrationLessonDto
+     */
     public function registerLesson(NewLessonDto $lessonDto): ResultRegistrationLessonDto
     {
         $teacherId = $lessonDto->getTeacherId();

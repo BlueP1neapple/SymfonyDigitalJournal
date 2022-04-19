@@ -4,7 +4,6 @@ namespace JoJoBizzareCoders\DigitalJournal\Service;
 
 use JoJoBizzareCoders\DigitalJournal\Entity\ItemClass;
 use JoJoBizzareCoders\DigitalJournal\Entity\ItemRepositoryInterface;
-use JoJoBizzareCoders\DigitalJournal\Repository\ItemJsonFileRepository;
 use JoJoBizzareCoders\DigitalJournal\Service\NewItemService\NewItemDto;
 use JoJoBizzareCoders\DigitalJournal\Service\NewItemService\ResultRegisteringItemDto;
 
@@ -27,6 +26,12 @@ class NewItemService
     }
 
 
+    /**
+     * Регистрация нового предмета
+     *
+     * @param NewItemDto $itemDto
+     * @return ResultRegisteringItemDto
+     */
     public function registerItem(NewItemDto $itemDto):ResultRegisteringItemDto
     {
         $entity = new ItemClass(
